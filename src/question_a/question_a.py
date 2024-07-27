@@ -28,7 +28,7 @@ class Stock:
         stocks = { 'Stock 1': stock1, 'Stock 2': stock2, 
                   'Stock 3': stock3, 'Stock 4': stock4, 'Stock 5': stock5}
         
-        for key, stock in stocks.items()
+        for key, stock in stocks.items():
             print((f"{key}: Symbol = {stock.get_symbol()}, Company Name = {stock.get_company_name()}"))
 
             
