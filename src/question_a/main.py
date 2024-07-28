@@ -1,35 +1,63 @@
 #add import
 from question_a import stock_purchase_history
+from question_a import Stock
 
-def display_menu():
+def display_menu(choice):
+
+    stocks = stock_purchase_history()
 
     print('1 - Display Stock Purchase History: ')
     print('2 - Exit')
 
-def run_menu():
+    choice == input('')
 
-    choice == '1'
+    if choice == '1':
 
-    while(choice != '3'):
+        display_stock_report(stocks)
+
+        continue_option()
+
+    elif choice == '2':
+
+        exit()
+
+    else:
+
+        print('Invalid option')
+
+def display_stock_report(stocks):
+
+    print()
+
+    for symbol, stock in stocks.items():
+
+        company_name = stock.get_company_name()
+
+        print(f'{company_name}, {symbol}')
+
+### this has to print
+
+def continue_option():
+
+    print('Continue?: ')
+    print('1 - Yes')
+    print('2- No')
+
+    cont_choice = int(input(''))
+
+    if cont_choice == 1:
 
         display_menu()
 
-        choice = input('Enter option: ').strip()
+    elif cont_choice == 2:
 
-        handle_menu()
-
-def handle_menu(choice):
-
-    if(choice == '1')    :
-
-        select_1()
-
-    else:
         print('Exiting..')
         exit()
 
-def select_1():
+    else:
+        print('Invalid entry!')
+        cont_choice()
 
-    result = stock_purchase_history
+display_menu()
 
-    print(f'Recent stock purchases are: {result}')
+##DON'T KNOW WHY ERROR "CANNOT IMPORT NAME"
